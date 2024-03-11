@@ -27,6 +27,43 @@ docker-compose up
 Documentation pages are generated automatically from your FastAPI code, including all the routes, parameters, bodies, etc., leveraging the OpenAPI standards. They are extremely useful for both development and testing phases, providing a clear and interactive interface for your API's consumers.
 FastAPI automatically generates and hosts interactive API documentation for your application. This is accessed by default at the `/docs endpoint of your application
 
+## Deploy to a on-premise server
+
+To deploy this Docker Compose application to an on-premise server, you can follow the below steps:
+
+1.Transfer files: Use scp to copy the Docker Compose files (docker-compose.yml), environment variables file (.env), and the source code (app/ directory) to the server. 
+2.SSH into the server: Use ssh to connect to the server.
+3.Navigate to the destination: Change directory to the location where the files were transferred on the server.
+4.Build and start the application: Use docker-compose to build and start the application in detached mode (-d) with the --build option to ensure that the latest changes are included.
+5.Monitor logs: Use docker-compose logs -f to monitor the logs and ensure that the application starts up successfully.
+
+Here's a basic script that outlines these steps. 
+
+```sh
+#!/bin/bash
+
+# Transfer Docker Compose files and source code to the server
+scp -r docker-compose.yml app/ user@example.com:/app
+
+# SSH into the server
+ssh user@example.com << 'EOF'
+
+# Navigate to the directory containing Docker Compose files
+cd /app
+
+# Build and start the application using Docker Compose
+docker-compose up -d --build
+
+# Monitor logs to ensure successful startup
+docker-compose logs -f
+
+EOF
+
+```
+
+Replace user@example.com with the SSH username and IP address or hostname of your on-premise server. Adjust the paths and commands as needed based on your specific setup.
+
+Remember to make the script executable (chmod +x deploy.sh) before running it. Additionally, ensure that SSH key-based authentication is properly set up to allow seamless SSH access to the on-premise server without requiring manual password input.
 
 ## CI CD Workflow
 
