@@ -51,6 +51,9 @@ jobs:
             export POSTGRES_DB=${{ env.TEST_POSTGRES_DB }}
             export SECRET_KEY=${{ env.TEST_SECRET_KEY }}
             docker-compose up -d
+        
+        - name: Wait for the web service to be ready
+          run: sleep 10
 
         - name: Curl endpoint on docker compose
           run: |
