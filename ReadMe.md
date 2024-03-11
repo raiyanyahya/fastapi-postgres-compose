@@ -1,6 +1,6 @@
 # fastapi-postgres-compose
 
-This repository contains an advanced Todo API implementation, crafted with the Python programming language. The API leverages the FastAPI framework, renowned for its high performance and easy-to-use asynchronous features. Persistent data storage is handled by a PostgreSQL database, ensuring robust and scalable data management. The entire application stack is containerized using Docker Compose, facilitating straightforward local development, testing, and deployment across diverse server environments. The api supports user login and authentication. Manages token generation and expiration for secure sessions and is configured with a volume (postgres_data) to ensure that data remains intact across container restarts and redeployments.
+This repository contains an Todo API implementation, built with the Python programming language. The API leverages the FastAPI framework, renowned for its high performance and easy-to-use asynchronous features. Persistent data storage is handled by a PostgreSQL database, ensuring robust and scalable data management. The entire application stack is containerized using Docker Compose, facilitating straightforward local development, testing, and deployment across diverse server environments. The api supports user login and authentication. Manages token generation and expiration for secure sessions and is configured with a volume (postgres_data) to ensure that data remains intact across container restarts and redeployments.
 
 ## Local Deployment Instructions
 
