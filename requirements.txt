@@ -1,0 +1,10 @@
+# requirements.txt
+fastapi
+uvicorn[standard]
+sqlalchemy==0.9.9
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+python-dotenv
+pydantic[email]
