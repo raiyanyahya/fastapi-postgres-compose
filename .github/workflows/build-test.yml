@@ -57,7 +57,18 @@ jobs:
 
         - name: Curl endpoint on docker compose
           run: |
+            # Test the root endpoint
+            echo "Testing root endpoint..."
             curl --fail http://0.0.0.0:8000/ || exit 1
+
+            # Test the root endpoint
+            echo "Testing root endpoint..."
+            curl --fail -X POST \
+                  -H "Content-Type: application/json" \
+                  -d '{"email": "user@example.com", "password": "password123"}' \
+                  "http://0.0.0.0:8000/users/register" || exit 1
+            
+            # add more tests below
 
         - name: Shutdown
           run: docker-compose down
