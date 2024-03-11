@@ -54,7 +54,7 @@ jobs:
 
         - name: Curl endpoint on docker compose
           run: |
-            curl --fail http://localhost:8000/ || exit 1
+            curl --fail http://0.0.0.0:8000/ || exit 1
 
         - name: Shutdown
           run: docker-compose down
