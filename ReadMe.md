@@ -8,10 +8,11 @@ Prior to local deployment, ensure Docker and Docker Compose are installed on you
 
 The application configuration relies on a set of environment variables for secure and flexible operations. These are as follows:
 
-POSTGRES_USER: Specifies the username for the PostgreSQL database.
-POSTGRES_PASSWORD: Sets the password for your PostgreSQL user.
-POSTGRES_DB: Defines the name of your PostgreSQL database.
-SECRET_KEY: A secure key utilized by the application, crucial for maintaining data integrity and security.
+- POSTGRES_USER: Specifies the username for the PostgreSQL database.
+- POSTGRES_PASSWORD: Sets the password for your PostgreSQL user.
+- POSTGRES_DB: Defines the name of your PostgreSQL database.
+- SECRET_KEY: A secure key utilized by the application, crucial for maintaining data integrity and security.
+
 It is essential to define these environment variables before initiating the application either locally or in a production setting.
 
 Execute the following commands in your terminal to clone the repository and launch the service stack:
